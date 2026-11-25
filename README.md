@@ -1,2 +1,5 @@
-# INTAI-Gaia-Spectral-Classifier
+# Gaia-Spectral-Classifier
+
+### IMPORTANT:
+You must download the dataset yourself at: https://www.kaggle.com/datasets/realkiller69/gaia-data-set-for-stellar-classificationdr3 and place it inside the /data Folder
 
