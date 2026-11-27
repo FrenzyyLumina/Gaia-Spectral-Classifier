@@ -15,14 +15,24 @@ from sklearn.preprocessing import LabelEncoder
 
 data_GaDR3 = pd.read_csv('data/dataGaia.csv')
 
+target = "SpType-ELS"
+
+excluded = {
+    "Source", "Teff", "Dist", "Rad", "Lum-Flame",
+    "Mass-Flame", "Age-Flame", "z-Flame",
+}
 
 data_GaDR3.head()
 data_GaDR3.info()
 data_GaDR3.isnull().sum().sort_values(ascending=False)
-data_GaDR3 = data_GaDR3.drop(columns=["Unnamed: 0", "Teff"])
+data_GaDR3 = data_GaDR3.drop(columns=excluded)
 
-GaussianNB().fit(data_GaDR3.drop(columns=["class"]), data_GaDR3["class"]);
-GaussianNB().score(data_GaDR3.drop(columns=["class"]), data_GaDR3["class"])
+
+
+
+
+GaussianNB().fit(data_GaDR3.drop(columns=[target]), data_GaDR3[target]);
+GaussianNB().score(data_GaDR3.drop(columns=[target]), data_GaDR3[target])
 
 test_data = data_GaDR3.sample(frac=0.2, random_state=42)
 train_data = data_GaDR3.drop(test_data.index)
