@@ -22,17 +22,13 @@ data_GaDR3 = data_GaDR3.drop(columns=["Unnamed: 0", "Teff"])
 
 
 
-# 3 way split of the data into training, validation, and test sets (70-15-15)
-
 X = data_GaDR3.drop(columns=['SpType-ELS', 'Source'])
 y = data_GaDR3['SpType-ELS']
 
-# 70%
 X_train, X_temp, y_train, y_temp = train_test_split(
     X, y, test_size=0.30, random_state=42, stratify=y
 )
 
-# 30% then split into 15% validation and 15% test
 X_val, X_test, y_val, y_test = train_test_split(
     X_temp, y_temp, test_size=0.50, random_state=42, stratify=y_temp
 )
