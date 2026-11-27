@@ -14,3 +14,8 @@ from sklearn.preprocessing import LabelEncoder
 
 
 data_GaDR3 = pd.read_csv('data/dataGaia.csv')
+
+data_GaDR3.head()
+data_GaDR3.info()
+data_GaDR3.isnull().sum().sort_values(ascending=False)
+data_GaDR3 = data_GaDR3.drop(columns=["Unnamed: 0", "Teff"])
