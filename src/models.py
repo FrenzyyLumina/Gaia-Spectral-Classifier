@@ -38,10 +38,10 @@ X_val, X_test, y_val_raw, y_test_raw = train_test_split(
 )
 
 #Print the sizes of the splits and the class distributions
-print("Train size:", len(X_train))
-print("Val size:", len(X_val))
+print("Training size:", len(X_train))
+print("Validation size:", len(X_val))
 print("Test size:", len(X_test))
 
-print("Train classes:\n", y_train.value_counts())
-print("Val classes:\n", y_val.value_counts())
+print("Training classes:\n", y_train.value_counts())
+print("Validation classes:\n", y_val.value_counts())
 print("Test classes:\n", y_test.value_counts())
