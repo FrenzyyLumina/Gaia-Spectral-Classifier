@@ -33,8 +33,10 @@ random_seed = NotImplemented
 test_size = NotImplemented
 
 GaussianNB().fit(data_GaDR3.drop(columns=[target]), data_GaDR3[target])
-GaussianNB().score(data_GaDR3.drop(columns=[target]), data_GaDR3[target])
+
 
 test_data = data_GaDR3.sample(frac=0.2, random_state=42)
 y_test = GaussianNB().predict(test_data.drop(columns=[target]))   
 train_data = data_GaDR3.drop(test_data.index)
+GaussianNB().score(train_data.drop(columns=[target]), train_data[target])
+
